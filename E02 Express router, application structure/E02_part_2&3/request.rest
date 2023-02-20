@@ -1,0 +1,12 @@
+POST http://[::1]:5001/api/album?search=Far
+Content-Type: application/json
+
+{
+  "name" : "play"
+}
+
+###
+GET http://[::1]:5001/api/album
+
+###
+GET http://[::1]:5001/api/album?search=Far

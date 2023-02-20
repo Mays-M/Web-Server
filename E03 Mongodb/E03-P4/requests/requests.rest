@@ -1,0 +1,38 @@
+
+@hostname = [::1]
+@port = 5001
+@host = {{hostname}}:{{port}}
+@ObjectID = 63d90a6f1fb739d6182ce27c
+
+
+### Get all
+GET http://{{host}}/api/albums/
+
+### Create
+POST http://{{host}}/api/albums/
+Content-Type: application/json
+
+{
+  "name": "UnderfineSinger",
+  "title": "Undifine",
+
+}
+
+### Get single
+GET http://{{host}}/api/albums/{{ObjectID}}
+
+### Modify
+PUT http://{{host}}/api/albums/{{ObjectID}}
+Content-Type: application/json
+
+{
+    "name":"Mays",
+    "title":"Test",
+   
+}
+
+### Delete (won't work without query string "login=johndoe")
+DELETE http://{{host}}/api/albums/{{ObjectID}}
+
+### Delete with user information
+DELETE http://{{host}}/api/albums/{{ObjectID}}?login=johndoe
